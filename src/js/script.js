@@ -56,7 +56,7 @@
     constructor(){
       const thisProduct = this;
 
-      console.log('new Product', thisProduct);
+      console.log('new Product:', thisProduct);
     }
   }
 
@@ -64,6 +64,12 @@
     initMenu: function(){
       const testProduct = new Product();
       console.log('testProduct:', testProduct);
+    },
+
+    initData: function(){
+      const thisApp = this;
+
+      thisApp.data = dataSource;
     },
 
     init: function(){
