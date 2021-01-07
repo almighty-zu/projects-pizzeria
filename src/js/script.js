@@ -170,6 +170,21 @@
         for(let optionId in param.options){
           const option = param.options[optionId];
           console.log(optionId, option);
+
+          //check if there is param with name of paramId in formData and if it includes optionId
+          const selectedOption = formData.hasOwnProperty(paramId) && formData[paramId].includes(optionId);
+          console.log('selectedOption', selectedOption);
+
+          //check if option is selected and its not default (selectedOption=true, option.default=false)
+          if(selectedOption && !option.default){
+            //add option price to price variable
+            price += option.price;
+          }
+          //check if option is not selected and its default (selectedOption=false, option.default=true)
+          else if(!selectedOption && option.default){
+            //reduce price variable
+            price -= option.price;
+          }
         }
       }
 
