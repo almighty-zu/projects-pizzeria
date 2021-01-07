@@ -99,11 +99,11 @@
       const thisProduct = this;
 
       /*find the cliclable trigger(the element that should react to clicking)*/
-      const clickableTrigger = thisProduct.accordionTrigger;
-      console.log('clickableTrigger:', clickableTrigger);
+      //const clickableTrigger = thisProduct.accordionTrigger;
+      //console.log('clickableTrigger:', clickableTrigger);
 
       /*START: add event listener to clickable trigger on event click*/
-      clickableTrigger.addEventListener('click', function(event) {
+      thisProduct.accordionTrigger.addEventListener('click', function(event) {
 
         /*prevent default action for event*/
         event.preventDefault();
