@@ -62,6 +62,9 @@
       thisProduct.renderInMenu();
       thisProduct.getElements();
       thisProduct.initAccordion();
+      thisProduct.initOrderForm();
+      thisProduct.processOrder();
+
 
       console.log('new Product:', thisProduct);
     }
@@ -120,6 +123,19 @@
         /*toggle active class on thisProduct.element*/
         thisProduct.element.classList.toggle('active');
       });
+    }
+
+    initOrderForm(){
+      const thisProduct = this;
+
+      console.log('thisProduct.initOrderForm', thisProduct);
+
+    }
+
+    processOrder(){
+      const thisProduct = this;
+
+      console.log('thisProduct.processOrder', thisProduct);
     }
   }
 
