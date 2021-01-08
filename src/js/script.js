@@ -186,6 +186,9 @@
             //reduce price variable
             price -= option.price;
           }
+
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          console.log('optionImage', optionImage);
         }
       }
 
