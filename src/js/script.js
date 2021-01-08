@@ -187,8 +187,23 @@
             price -= option.price;
           }
 
+          //find image with class .paramId-optionId in div with images (thisProduct.imageWrapper)
           const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
           console.log('optionImage', optionImage);
+
+          //check if the image is found, if(optionImage is true a.k.a is found)then this happens{}
+          if(optionImage){
+            //check if it is also selected option (if selectedOption is true) then this happens{}
+            if(selectedOption){
+              //add class active to classList of the found image
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+            //if option is not selected (selectedOption = false) a.k.a negation of selectedOption is true then this happens{}
+            if(!selectedOption) {
+              //remove class active from classList of the found image
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          }
         }
       }
 
