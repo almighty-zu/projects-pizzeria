@@ -52,8 +52,8 @@
     menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   };
 
-  class Product{
-    constructor(id, data){
+  class Product {
+    constructor(id, data) {
       const thisProduct = this;
 
       thisProduct.id = id;
@@ -69,7 +69,7 @@
       console.log('new Product:', thisProduct);
     }
 
-    renderInMenu(){
+    renderInMenu() {
       const thisProduct = this;
 
       /*generate HTML based on template*/
@@ -88,7 +88,7 @@
       menuContainer.appendChild(thisProduct.element);
     }
 
-    getElements(){
+    getElements() {
       const thisProduct = this;
 
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
@@ -99,7 +99,7 @@
       thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
-    initAccordion(){
+    initAccordion() {
       const thisProduct = this;
 
       /*find the cliclable trigger(the element that should react to clicking)*/
@@ -107,7 +107,7 @@
       //console.log('clickableTrigger:', clickableTrigger);
 
       /*START: add event listener to clickable trigger on event click*/
-      thisProduct.accordionTrigger.addEventListener('click', function(event) {
+      thisProduct.accordionTrigger.addEventListener('click', function (event) {
 
         /*prevent default action for event*/
         event.preventDefault();
@@ -117,7 +117,7 @@
         console.log('active product:', activeProduct);
 
         /*if there is active product and it's not thisProduct.element, remove class active from it*/
-        if(activeProduct !== thisProduct.element && activeProduct !== null){
+        if (activeProduct !== thisProduct.element && activeProduct !== null) {
           activeProduct.classList.remove('active');
         }
 
@@ -126,30 +126,30 @@
       });
     }
 
-    initOrderForm(){
+    initOrderForm() {
       const thisProduct = this;
 
       console.log('thisProduct.initOrderForm', thisProduct);
 
-      thisProduct.form.addEventListener('submit', function(event){
+      thisProduct.form.addEventListener('submit', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
       });
 
-      for(let input of thisProduct.formInputs){
-        input.addEventListener('change', function(){
+      for (let input of thisProduct.formInputs) {
+        input.addEventListener('change', function () {
           thisProduct.processOrder();
         });
       }
 
-      thisProduct.cartButton.addEventListener('click', function(event){
+      thisProduct.cartButton.addEventListener('click', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
       });
 
     }
 
-    processOrder(){
+    processOrder() {
       const thisProduct = this;
 
       console.log('thisProduct.processOrder', thisProduct);
@@ -162,13 +162,13 @@
       let price = thisProduct.data.price;
 
       //for every category (param)...
-      for (let paramId in thisProduct.data.params){
+      for (let paramId in thisProduct.data.params) {
         //determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes' ...}
         const param = thisProduct.data.params[paramId];
         console.log(paramId, param);
 
         //for every option in this category
-        for(let optionId in param.options){
+        for (let optionId in param.options) {
           const option = param.options[optionId];
           console.log(optionId, option);
 
@@ -177,12 +177,12 @@
           console.log('selectedOption', selectedOption);
 
           //check if option is selected and its not default (selectedOption=true, option.default=false)
-          if(selectedOption && !option.default){
+          if (selectedOption && !option.default) {
             //add option price to price variable
             price += option.price;
           }
           //check if option is not selected and its default (selectedOption=false, option.default=true)
-          else if(!selectedOption && option.default){
+          else if (!selectedOption && option.default) {
             //reduce price variable
             price -= option.price;
           }
@@ -192,14 +192,14 @@
           console.log('optionImage', optionImage);
 
           //check if the image is found, if(optionImage is true a.k.a is found)then this happens{}
-          if(optionImage){
+          if (optionImage) {
             //check if it is also selected option (if selectedOption is true) then this happens{}
-            if(selectedOption){
+            if (selectedOption) {
               //add class active to classList of the found image
               optionImage.classList.add(classNames.menuProduct.imageVisible);
             }
             //if option is not selected (selectedOption = false) a.k.a negation of selectedOption is true then this happens{}
-            if(!selectedOption) {
+            if (!selectedOption) {
               //remove class active from classList of the found image
               optionImage.classList.remove(classNames.menuProduct.imageVisible);
             }
@@ -213,12 +213,12 @@
   }
 
   const app = {
-    initMenu: function(){
+    initMenu: function () {
       const thisApp = this;
 
       console.log('thisApp.data', thisApp.data);
 
-      for(let productData in thisApp.data.products){
+      for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
       }
       /*previous code
@@ -229,13 +229,13 @@
       console.log('testProduct:', testProduct);*/
     },
 
-    initData: function(){
+    initData: function () {
       const thisApp = this;
 
       thisApp.data = dataSource;
     },
 
-    init: function(){
+    init: function () {
       const thisApp = this;
       console.log('*** App starting ***');
       console.log('thisApp:', thisApp);
