@@ -249,6 +249,10 @@
 
       thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
+
+      if(thisWidget.value !== newValue){
+        thisWidget.value = newValue;
+      }
     }
   }
 
