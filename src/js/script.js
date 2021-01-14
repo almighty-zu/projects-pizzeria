@@ -228,7 +228,7 @@
       console.log('constructor arguments:', element);
 
       thisWidget.getElements(element);
-      thisWidget.setValue(value);
+      thisWidget.setValue(thisWidget.input.value);
     }
 
     getElements(element){
