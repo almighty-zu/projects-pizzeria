@@ -227,6 +227,7 @@
       console.log('AmountWidget:', thisWidget);
       console.log('constructor arguments:', element);
 
+
       thisWidget.getElements(element);
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
@@ -249,12 +250,13 @@
 
       /*TO DO: add validation*/
 
-      thisWidget.value = newValue;
-      thisWidget.input.value = thisWidget.value;
+      //thisWidget.value = newValue;
 
-      if(thisWidget.value !== newValue && !isNaN(newValue)){
+      if(thisWidget.value !== newValue && !isNaN(newValue)) {
         thisWidget.value = newValue;
       }
+
+      thisWidget.input.value = thisWidget.value;
     }
 
     initActions(){
@@ -264,12 +266,12 @@
         thisWidget.setValue(thisWidget.input.value);
       });
 
-      thisWidget.linkDecrease.input.addEventListener('click', function(event){
+      thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
         thisWidget.setValue(thisWidget.value - 1);
       });
 
-      thisWidget.linkIncrease.input.addEventListener('click', function(event){
+      thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
         thisWidget.setValue(thisWidget.value + 1);
       });
