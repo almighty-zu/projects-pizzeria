@@ -257,7 +257,7 @@
 
       /*TO DO: add validation*/
 
-      //thisWidget.value = newValue;
+      thisWidget.value = settings.amountWidget.defaultValue;
 
       if(thisWidget.value !== newValue && !isNaN(newValue) && newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax) {
         thisWidget.value = newValue;
