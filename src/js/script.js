@@ -176,7 +176,7 @@
 
           //check if there is param with name of paramId in formData and if it includes optionId
           const selectedOption = formData.hasOwnProperty(paramId) && formData[paramId].includes(optionId);
-          console.log('selectedOption', selectedOption);
+          //console.log('selectedOption', selectedOption);
 
           //check if option is selected and its not default (selectedOption=true, option.default=false)
           if (selectedOption && !option.default) {
@@ -226,6 +226,18 @@
 
       console.log('AmountWidget:', thisWidget);
       console.log('constructor arguments:', element);
+
+      thisWidget.getElements(element);
+    }
+
+    getElements(element){
+      const thisWidget = this;
+
+      thisWidget.element = element;
+      thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
+      thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
+      thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
+
     }
   }
 
