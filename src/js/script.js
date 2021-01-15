@@ -340,6 +340,9 @@
 
     getElements(element){
       const thisCart = this;
+
+      thisCart.dom = {};
+
       thisCart.dom.wrapper = element;
     }
   }
