@@ -358,7 +358,6 @@
       }
       /*previous code
       const thisApp = this;
-
       //console.log('thisApp.data:', thisApp.data);
       const testProduct = new Product();
       console.log('testProduct:', testProduct);*/
@@ -368,6 +367,15 @@
       const thisApp = this;
 
       thisApp.data = dataSource;
+    },
+
+    initCart: function(){
+      const thisApp = this;
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
+
+      console.log('cartElem:', cartElem);
     },
 
     init: function () {
@@ -380,10 +388,9 @@
 
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
     },
   };
 
   app.init();
 }
-
-
