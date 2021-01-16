@@ -259,6 +259,12 @@
         thisProduct.processOrder();
       });
     }
+
+    addToCart(){
+      const thisProduct = this;
+
+      app.cart.add(thisProduct);
+    }
   }
 
   class AmountWidget {
