@@ -248,7 +248,9 @@
       price *= thisProduct.amountWidget.value;
 
       //update calculated price in the HTML
+      thisProduct.priceSingle = price;
       thisProduct.priceElem.innerHTML = price;
+
     }
 
     initAmountWidget() {
