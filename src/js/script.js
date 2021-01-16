@@ -268,6 +268,7 @@
       const thisProduct = this;
 
       app.cart.add(thisProduct.prepareCartProduct());
+
     }
 
     prepareCartProduct(){
@@ -420,12 +421,18 @@
     }
 
     add(menuProduct){
-      // const thisCart = this;
+      const thisCart = this;
 
       console.log('adding product', menuProduct);
+
+      const generatedHTML = templates.cartProduct(menuProduct);
+      console.log('generated html:', generatedHTML);
+
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+      console.log('generated DOM:', generatedDOM);
+
+      thisCart.dom.productList.appendChild(generatedDOM);
     }
-
-
   }
 
   const app = {
