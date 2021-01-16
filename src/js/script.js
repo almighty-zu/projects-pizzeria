@@ -350,21 +350,14 @@
     }
 
     initActions() {
-      const thisWidget = this;
+      const thisCart = this;
 
-      thisWidget.input.addEventListener('change', function () {
-        thisWidget.setValue(thisWidget.input.value);
-      });
-
-      thisWidget.linkDecrease.addEventListener('click', function (event) {
+      thisCart.dom.toggleTrigger.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value - 1);
-      });
 
-      thisWidget.linkIncrease.addEventListener('click', function (event) {
-        event.preventDefault();
-        thisWidget.setValue(thisWidget.value + 1);
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
+    }
   }
 
   const app = {
