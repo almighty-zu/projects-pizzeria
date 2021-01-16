@@ -244,11 +244,12 @@
         }
       }
 
+      thisProduct.priceSingle = price;
+
       //multiply price by amount
       price *= thisProduct.amountWidget.value;
 
       //update calculated price in the HTML
-      thisProduct.priceSingle = price;
       thisProduct.priceElem.innerHTML = price;
 
     }
@@ -266,7 +267,7 @@
     addToCart(){
       const thisProduct = this;
 
-      app.cart.add(thisProduct);
+      app.cart.add(thisProduct.prepareCartProduct());
     }
 
     prepareCartProduct(){
@@ -276,7 +277,17 @@
         id: thisProduct.id,
         name: thisProduct.data.name,
         amount: thisProduct.amountWidget.value,
+        priceSingle: thisProduct.priceSingle,
+        priceTotal: thisProduct.priceSingle *= thisProduct.amountWidget.value,
+        //params: ,
+
+
       };
+
+      console.log('productSummary', productSummary);
+
+      return productSummary;
+
     }
   }
 
