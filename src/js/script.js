@@ -264,14 +264,14 @@
       });
     }
 
-    addToCart(){
+    addToCart() {
       const thisProduct = this;
 
       app.cart.add(thisProduct.prepareCartProduct());
 
     }
 
-    prepareCartProduct(){
+    prepareCartProduct() {
       const thisProduct = this;
 
       const productSummary = {
@@ -290,7 +290,7 @@
 
     }
 
-    prepareCartProductParams(){
+    prepareCartProductParams() {
       const thisProduct = this;
 
       const formData = utils.serializeFormToObject(thisProduct.form);
@@ -420,7 +420,7 @@
       });
     }
 
-    add(menuProduct){
+    add(menuProduct) {
       const thisCart = this;
 
       console.log('adding product', menuProduct);
@@ -432,6 +432,9 @@
       console.log('generated DOM:', generatedDOM);
 
       thisCart.dom.productList.appendChild(generatedDOM);
+
+      thisCart.products.push(menuProduct);
+      console.log('thisCart.products', thisCart.products);
     }
   }
 
