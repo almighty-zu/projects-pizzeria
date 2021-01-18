@@ -227,7 +227,7 @@
         priceTotal: thisProduct.priceSingle *= thisProduct.amountWidget.value,
         params: thisProduct.prepareCartProductParams()
       };
-      console.log('productSummary', productSummary);
+      // c console.log('productSummary', productSummary);
       return productSummary;
     }
     prepareCartProductParams() {
@@ -254,8 +254,8 @@
   class AmountWidget {
     constructor(element) {
       const thisWidget = this;
-      console.log('AmountWidget:', thisWidget);
-      console.log('constructor arguments:', element);
+      // c console.log('AmountWidget:', thisWidget);
+      // c console.log('constructor arguments:', element);
       thisWidget.getElements(element);
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
@@ -304,7 +304,7 @@
       thisCart.products = [];
       thisCart.getElements(element);
       thisCart.initActions();
-      console.log('new Cart', thisCart);
+      // c console.log('new Cart', thisCart);
     }
     getElements(element) {
       const thisCart = this;
@@ -312,6 +312,10 @@
       thisCart.dom.wrapper = element;
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
       thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
+      thisCart.dom.deliveryFee = thisCart.dom.wrapper.querySelector(select.cart.deliveryFee);
+      thisCart.dom.subtotalPrice = thisCart.dom.wrapper.querySelector(select.cart.subtotalPrice);
+      thisCart.dom.totalNumber = thisCart.dom.wrapper.querySelector(select.cart.totalNumber);
+      thisCart.dom.totalPrice = thisCart.dom.wrapper.querySelectorAll(select.cart.totalPrice);
     }
     initActions() {
       const thisCart = this;
@@ -322,24 +326,48 @@
     }
     add(menuProduct) {
       const thisCart = this;
-      console.log('adding product', menuProduct);
+      // c console.log('adding product', menuProduct);
       const generatedHTML = templates.cartProduct(menuProduct);
-      console.log('generated html:', generatedHTML);
+      // c console.log('generated html:', generatedHTML);
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
-      console.log('generated DOM:', generatedDOM);
+      // c console.log('generated DOM:', generatedDOM);
       thisCart.dom.productList.appendChild(generatedDOM);
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
-      console.log('thisCart.products', thisCart.products);
+      // c console.log('thisCart.products', thisCart.products);
+
+      thisCart.update();
     }
 
     update(){
       const thisCart = this;
 
-      thisCart.devileryFee = select.cart.deliveryFee;
-      thisCart.totalNumber = select.cart.totalNumber;
-      thisCart.subtotalPrice = select.cart.subtotalPrice;
+      thisCart.deliveryFee = settings.cart.defaultDeliveryFee;
+      console.log('delivery fee:', thisCart.deliveryFee);
 
+      thisCart.totalNumber = 0;
+      thisCart.subtotalPrice = 0;
 
+      for(let product of thisCart.products){
+        thisCart.totalNumber += product.amount;
+
+        thisCart.subtotalPrice += product.priceTotal;
+        console.log('thisCart.subtotalPrice:', thisCart.subtotalPrice);
+        console.log('thisCart.totalNumber:', thisCart.totalNumber);
+      }
+      if(thisCart.TotalNumber !== 0){
+        thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
+        console.log('thisCart.totalPrice', thisCart.totalPrice);
+      } else {
+        thisCart.deliveryFee = 0;
+        thisCart.subtotalPrice = 0;
+        thisCart.totalPrice = 0;
+      }
+      thisCart.dom.subtotalPrice.innerHTML = thisCart.subtotalPrice;
+      for(let price of thisCart.dom.totalPrice){
+        price.innerHTML = thisCart.totalPrice;
+      }
+      thisCart.dom.deliveryFee.innerHTML = thisCart.deliveryFee;
+      thisCart.dom.totalNumber.innerHTML = thisCart.totalNumber;
     }
   }
   class CartProduct {
@@ -353,7 +381,7 @@
       thisCartProduct.params = menuProduct.params;
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
-      console.log('thisCartProduct', thisCartProduct);
+      // c console.log('thisCartProduct', thisCartProduct);
     }
     getElements(element){
       const thisCartProduct = this;
@@ -397,7 +425,7 @@
       const thisApp = this;
       const cartElem = document.querySelector(select.containerOf.cart);
       thisApp.cart = new Cart(cartElem);
-      console.log('cartElem:', cartElem);
+      // c console.log('cartElem:', cartElem);
     },
     init: function () {
       const thisApp = this;
