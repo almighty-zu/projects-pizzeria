@@ -355,7 +355,7 @@
 
       for(let product of thisCart.products){
         thisCart.totalNumber += product.amount;
-        thisCart.subtotalPrice += product.priceTotal;
+        thisCart.subtotalPrice += product.price || product.priceTotal;
         console.log('thisCart.subtotalPrice:', thisCart.subtotalPrice);
         console.log('thisCart.totalNumber:', thisCart.totalNumber);
       }
