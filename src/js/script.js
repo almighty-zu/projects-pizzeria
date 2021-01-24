@@ -427,6 +427,10 @@
       };
 
       console.log('payload:', payload);
+
+      for(let prod of thisCart.products) {
+        payload.products.push(prod.getData());
+      }
     }
   }
   class CartProduct {
@@ -492,6 +496,21 @@
 
         thisCartProduct.remove();
       });
+    }
+
+    getData(){
+      const thisCartProduct = this;
+
+      const formProduct = {
+        id: thisCartProduct.id,
+        amount: thisCartProduct.amount,
+        price: thisCartProduct.price,
+        priceSingle: thisCartProduct.priceSingle,
+        name: thisCartProduct.name,
+        params: thisCartProduct.params,
+      };
+      console.log('formProduct', formProduct);
+      return formProduct;
     }
   }
   const app = {
