@@ -441,7 +441,7 @@
       };
 
       fetch(url, options);
-      console.log('options', options);
+
     }
   }
   class CartProduct {
