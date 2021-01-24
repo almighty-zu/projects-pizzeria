@@ -419,10 +419,10 @@
 
         address: thisCart.dom.formAddress.value,
         phone: thisCart.dom.formPhone.value,
-        totalPrice: thisCart.dom.totalPrice,
-        subTotalPrice: thisCart.dom.subtotalPrice,
-        totalNumber: thisCart.dom.totalNumber,
-        deliveryFee: thisCart.dom.deliveryFee,
+        totalPrice: thisCart.totalPrice,
+        subTotalPrice: thisCart.subtotalPrice,
+        totalNumber: thisCart.totalNumber,
+        deliveryFee: thisCart.deliveryFee,
         products: []
       };
 
