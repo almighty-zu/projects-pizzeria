@@ -1,4 +1,4 @@
-import {select, templates} from './../settings.js';
+import {select, templates} from '../settings.js';
 import AmountWidget from './AmountWidget.js';
 
 class Booking {
@@ -26,13 +26,12 @@ class Booking {
     const thisBooking = this;
 
     thisBooking.peopleAmountWidget = new AmountWidget(thisBooking.dom.peopleAmount);
-    console.log(thisBooking.peopleAmountWidget, 'thisBooking.peopleAmountWidget');
-    thisBooking.dom.peopleAmount.addEventListener('updated', function () {
+    thisBooking.dom.peopleAmount.addEventListener('click', function () {
 
     });
 
-    thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
-    thisBooking.dom.hoursAmount.addEventListener('updated', function () {
+    thisBooking.hoursAmountWidget = new AmountWidget(thisBooking.dom.hoursAmount);
+    thisBooking.dom.hoursAmount.addEventListener('click', function () {
 
     });
 
