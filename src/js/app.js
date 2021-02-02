@@ -63,5 +63,6 @@ const app = {
     thisApp.initCart();
   },
 };
+
 app.init();
 
