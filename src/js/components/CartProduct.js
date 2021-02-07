@@ -14,7 +14,7 @@ class CartProduct {
     thisCartProduct.getElements(element);
     thisCartProduct.initAmountWidget();
     thisCartProduct.initActions();
-    console.log('thisCartProduct', thisCartProduct);
+    //console.log('thisCartProduct', thisCartProduct);
 
 
   }
@@ -49,7 +49,7 @@ class CartProduct {
     });
 
     thisCartProduct.dom.wrapper.dispatchEvent(event);
-    console.log('remove', event);
+    //console.log('remove', event);
   }
 
   initActions() {
@@ -77,7 +77,7 @@ class CartProduct {
       name: thisCartProduct.name,
       params: thisCartProduct.params,
     };
-    console.log('formProduct', formProduct);
+    //console.log('formProduct', formProduct);
     return formProduct;
   }
 }

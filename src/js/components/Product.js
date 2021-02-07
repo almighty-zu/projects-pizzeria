@@ -162,7 +162,7 @@ class Product {
       price: thisProduct.priceTotal,
       params: thisProduct.prepareCartProductParams()
     };
-    console.log('productSummary', productSummary);
+    //console.log('productSummary', productSummary);
     return productSummary;
   }
   prepareCartProductParams() {

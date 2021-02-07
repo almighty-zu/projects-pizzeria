@@ -77,7 +77,7 @@ const app = {
         classNames.nav.active,
         link.getAttribute('href') == '#' + pageId
       );
-      console.log('thisApp.navLinks', thisApp.navLinks);
+      //console.log('thisApp.navLinks', thisApp.navLinks);
     }
 
   },
@@ -106,7 +106,7 @@ const app = {
         return rawResponse.json();
       })
       .then(function(parsedResponse){
-        console.log('parsedResponse', parsedResponse);
+        //console.log('parsedResponse', parsedResponse);
 
         /*save parsedResponse as thisApp.data.products*/
         thisApp.data.products = parsedResponse;
@@ -120,7 +120,7 @@ const app = {
     const thisApp = this;
     const cartElem = document.querySelector(select.containerOf.cart);
     thisApp.cart = new Cart(cartElem);
-    console.log('cartElem:', cartElem);
+    //console.log('cartElem:', cartElem);
 
     thisApp.productList = document.querySelector(select.containerOf.menu);
 
@@ -130,10 +130,10 @@ const app = {
   },
   init: function () {
     const thisApp = this;
-    console.log('*** App starting ***');
-    console.log('thisApp:', thisApp);
-    console.log('classNames:', classNames);
-    console.log('settings:', settings);
+    //console.log('*** App starting ***');
+    //console.log('thisApp:', thisApp);
+    //console.log('classNames:', classNames);
+    //console.log('settings:', settings);
     console.log('templates:', templates);
 
     thisApp.initPages();

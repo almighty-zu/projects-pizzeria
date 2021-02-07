@@ -8,7 +8,7 @@ class Cart {
     thisCart.products = [];
     thisCart.getElements(element);
     thisCart.initActions();
-    console.log('new Cart', thisCart);
+    //console.log('new Cart', thisCart);
   }
   getElements(element) {
     const thisCart = this;
@@ -46,14 +46,14 @@ class Cart {
   }
   add(menuProduct) {
     const thisCart = this;
-    console.log('adding product', menuProduct);
+    //console.log('adding product', menuProduct);
     const generatedHTML = templates.cartProduct(menuProduct);
-    console.log('generated html:', generatedHTML);
+    //console.log('generated html:', generatedHTML);
     const generatedDOM = utils.createDOMFromHTML(generatedHTML);
-    console.log('generated DOM:', generatedDOM);
+    //console.log('generated DOM:', generatedDOM);
     thisCart.dom.productList.appendChild(generatedDOM);
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
-    console.log('thisCart.products', thisCart.products);
+    //console.log('thisCart.products', thisCart.products);
 
     thisCart.update();
   }
