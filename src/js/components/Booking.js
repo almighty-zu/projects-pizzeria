@@ -98,6 +98,5 @@ class Booking {
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
 
   }
-fuck
 }
 export default Booking;
