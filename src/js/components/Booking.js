@@ -7,10 +7,12 @@ import HourPicker from './HourPicker.js';
 class Booking {
   constructor(wrapper) {
     const thisBooking = this;
+
     thisBooking.render(wrapper);
     thisBooking.initWidgets();
     thisBooking.getData();
 
+    thisBooking.reservationTable = null;
   }
 
   getData(){
@@ -148,6 +150,10 @@ class Booking {
     }
   }
 
+  bookTable(){
+
+  }
+
   render(wrapper) {
     const thisBooking = this;
     const generatedHTML = templates.bookingWidget();
@@ -160,6 +166,8 @@ class Booking {
     thisBooking.dom.hourPicker = thisBooking.dom.wrapper.querySelector(select.widgets.hourPicker.wrapper);
 
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(select.booking.tables);
+    thisBooking.dom.parentTables = document.querySelector(select.booking.parentTables);
+
 
   }
 
@@ -176,10 +184,43 @@ class Booking {
     thisBooking.datePicker = new DatePicker(thisBooking.dom.datePicker);
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
 
+
     thisBooking.dom.wrapper.addEventListener('updated', function(){
       thisBooking.updateDOM();
     });
 
+    thisBooking.dom.parentTables.addEventListener('click', function(){
+      thisBooking.initTables();
+    });
   }
+
+  initTables(){
+
+    const thisBooking = this;
+
+    const clickedElement = event.target;
+
+    if (clickedElement.classList.contains('table') && !clickedElement.classList.contains(classNames.booking.tableBooked)){
+      const idTable = clickedElement.getAttribute('data-table');
+      console.log('idTable', idTable);
+
+      for (let table of thisBooking.dom.tables){
+        table.classList.remove(classNames.booking.tableSelected);
+      }
+
+      if(thisBooking.reservationTable === idTable) {
+        thisBooking.reservationTable = null;
+      } else {
+        clickedElement.classList.add(classNames.booking.tableSelected);
+        thisBooking.reservationTable = idTable;
+      }
+
+    } else if(clickedElement.classList.contains(classNames.booking.tableBooked)) {
+      alert('This table is already booked! Smile and try a different one.');
+    }
+
+    console.log(thisBooking.reservationTable);
+  }
+
 }
 export default Booking;
