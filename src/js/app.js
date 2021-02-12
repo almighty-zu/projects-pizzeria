@@ -145,4 +145,3 @@ const app = {
 };
 
 app.init();
-
