@@ -4,4 +4,131 @@
   background: $color-light;
   border-bottom: 1px solid lighten($color-dark, 70%);
   border-radius: $radius;
+
+  a {
+    color: rgb(26, 80, 53);
+    margin-left: 13px;
+  }
+}
+
+.home {
+  .options{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    text-align: center;
+
+    h2{
+      padding: 40px 0;
+      font-size: 25px;
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
+
+.order-online{
+  background-image: url(../../images/pizza-1.jpg);
+  background-size: cover;
+  height: 160px;
+  width: 295px;
+  border-radius: 4%;
+  color: white;
+  cursor: pointer;
+}
+
+.order-online:hover > h2 {
+  margin-top: -10px;
+  transition-timing-function: ease-in;
+  transition-property: margin-top;
+  transition-duration: 0.25s;
+}
+
+.order-online:hover > p {
+  display: block;
+  margin-top: -50px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.book-a-table{
+  background-image: url(../../images/pizza-2.jpg);
+  background-size: cover;
+  margin-right: 96px;
+  width: 295px;
+  height: 160px;
+  border-radius: 4%;
+  color: white;
+  cursor: pointer;
+}
+
+.book-a-table:hover > p {
+  display: block;
+  margin-top: -50px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.book-a-table:hover > h2 {
+  margin-top: -10px;
+  transition-timing-function: ease-in;
+  transition-property: margin-top;
+  transition-duration: 0.25s;
+}
+
+.banner{
+  height: 180px;
+  border-radius: 4%;
+  margin-top: 10px;
+  background-color: rgb(202, 69, 69);
+  text-align: center;
+  color: white;
+  padding: 15px 0;
+
+  h2{
+    font-size: 30px;
+  }
+
+  h4{
+    font-size: 18px;
+    padding: 0;
+  }
+}
+
+.carousel-main {
+  height: 220px;
+  margin-top: 80px;
+
+  .carousel-item {
+    display: flex;
+  }
+
+  .carousel-description {
+    width: 385px;
+    height: 180px;
+    margin: auto;
+  }
+
+  .carousel-picture {
+    width: 200px;
+    margin-right: 50px;
+    object-fit: cover;
+    border-radius: 5%;
+    height: 180px;
+  }
+
+  h4{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+
+  p:nth-child(3){
+    font-size: 15px;
+    font-style: italic;
+  }
 }

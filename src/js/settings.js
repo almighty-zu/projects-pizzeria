@@ -25,11 +25,18 @@ export const select = {
     amountWidget: '.widget-amount',
     cartButton: '[href="#add-to-cart"]',
   },
+  home: {
+    orderButton: '.order-online',
+    bookButton: '.book-a-table',
+  },
   widgets: {
     amount: {
       input: 'input.amount', // CODE CHANGED
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
+    },
+    carousel: {
+      wrapper: 'carousel-main',
     },
     datePicker: {
       wrapper: '.date-picker',

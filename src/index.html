@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
     rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -248,23 +248,52 @@
     </article> <!-- .product -->
   </script>
   <script id="template-home-site" type="text/x-handlebars-template">
-    <div class="home-container">
+    <div class="home">
       <div class="options">
         <div class="order-online">
-          <div class="order-online_image">
-            <img src="">
-          </div>
+          <h2>ORDER ONLINE</h2>
+          <p>Delicious food delivered to your home.</p>
         </div>
         <div class="book-a-table">
-          <div class="book-table_image">
-            <img src="">
-          </div>
+          <h2>BOOK A TABLE</h2>
+          <p>Delicious food delivered to your home.</p>
         </div>
       </div>
       <div class='banner'>
-
+        <h2>OPENING HOURS</h2>
+        <h4>TUE-SUN, 12PM-12AM</h4>
       </div>
-      <div class="carousel">
+      <div class="carousel-main">
+          <div class="carousel-cell">
+            <div class="carlousel-item">
+              <img src="../../images/pizza-3.jpg" class="carousel-picture">
+              <div class="carousel-description">
+                <h4>BABA BUBU</h4>
+                <p>ewqewqewqewqeqweqweqweqweqweqweqwrkewrfhwehruwehurhuewhrhewuhrh</p>
+                <p>rewrewrewr</p>
+              </div>
+            </div>
+          <div class="carousel-cell">
+            <div class="carlousel-item">
+              <img src="../../images/pizza-3.jpg" class="carousel-picture">
+              <div class="carousel-description">
+                <h4>BABA BUBU</h4>
+                <p>ewqewqewqewqeqweqweqweqweqweqweqwrkewrfhwehruwehurhuewhrhewuhrh</p>
+                <p>rewrewrewr</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell">
+            <div class="carlousel-item">
+              <img src="../../images/pizza-3.jpg" class="carousel-picture">
+              <div class="carousel-description">
+                <h4>BABA BUBU</h4>
+                <p>ewqewqewqewqeqweqweqweqweqweqweqwrkewrfhwehruwehurhuewhrhewuhrh</p>
+                <p>rewrewrewr</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
       <div class="gallery">
@@ -273,10 +302,10 @@
     </div>
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="vendor/flickity.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="vendor/range-slider.min.js"></script>
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
 
