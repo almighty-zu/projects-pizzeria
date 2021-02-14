@@ -84,6 +84,7 @@
   height: 180px;
   border-radius: 4%;
   margin-top: 10px;
+  margin-bottom: 20px;
   background-color: rgb(202, 69, 69);
   text-align: center;
   color: white;
@@ -100,38 +101,28 @@
 }
 
 .carousel-main {
-  height: 220px;
-  margin-top: 80px;
-
-  .carousel-item {
-    display: flex;
-  }
-
-  .carousel-description {
-    width: 385px;
-    height: 180px;
-    margin: auto;
-  }
-
-  .carousel-picture {
-    width: 200px;
-    margin-right: 50px;
-    object-fit: cover;
-    border-radius: 5%;
-    height: 180px;
-  }
-
-  h4{
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 15px;
-  }
-
-  p:nth-child(3){
-    font-size: 15px;
-    font-style: italic;
-  }
+  margin: 100px auto;
+  position: relative;
 }
+
+.carousel-cell {
+  width: 100%;
+  height: 300px;
+  display: flex;
+}
+
+.picture {
+  height: 300px;
+  width: 400px;
+  margin-right: 20px;
+  border-radius: 2%;
+  object-fit: cover;
+}
+
+.author {
+  font-style: italic;
+}
+
 
 .gallery {
   margin-top: 100px;

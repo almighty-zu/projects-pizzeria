@@ -1,3 +1,5 @@
+/*global Flickity */
+
 class Carousel {
   constructor(element) {
     const thisCarousel = this;
@@ -7,16 +9,16 @@ class Carousel {
 
   render(element) {
     const thisCarousel = this;
+
     thisCarousel.wrapper = element;
   }
 
   initPlugin() {
-    const thisCarousel =this;
 
-    // eslint-disable-next-line no-undef
-    new Flickity(thisCarousel.wrapper, {
+    const thisCarousel = this;
+
+    thisCarousel.init = new Flickity (thisCarousel.wrapper, {
       cellAlign: 'left',
-      wrapAround: true,
       contain: true,
       prevNextButtons: false,
       autoPlay: true,

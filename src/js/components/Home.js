@@ -18,17 +18,20 @@ class Home {
     const generatedHTML = templates.homeWidget();
     thisHome.dom.wrapper.innerHTML = generatedHTML;
 
-    thisHome.dom.carouselWidget = thisHome.dom.wrapper.querySelector(select.widgets.carousel.wrapper);
+    thisHome.dom.carousel = thisHome.dom.wrapper.querySelector(select.widgets.carousel);
     thisHome.dom.orderButton = thisHome.dom.wrapper.querySelector(select.home.orderButton);
     thisHome.dom.bookButton = thisHome.dom.wrapper.querySelector(select.home.bookButton);
     thisHome.pages = document.querySelector(select.containerOf.pages).children;
     thisHome.navLinks = document.querySelectorAll(select.nav.links);
   }
 
-  initWidgets(){
+  initWidgets() {
     const thisHome = this;
-    thisHome.carouselWidget = new Carousel(thisHome.dom.carouselWidget);
+
+    thisHome.carouselwidget = new Carousel(thisHome.dom.carousel);
+    console.log('thisHome.carousel', thisHome.carouselwidget);
   }
+
 
   initActions(){
     const thisHome = this;
