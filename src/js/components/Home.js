@@ -37,17 +37,17 @@ class Home {
       event.preventDefault();
 
       thisHome.pages[0].classList.remove(classNames.pages.active);
-      //thisHome.navLinks[0].classList.remove(classNames.nav.active);
+      thisHome.navLinks[0].classList.remove(classNames.nav.active);
       thisHome.pages[1].classList.add(classNames.pages.active);
-      //thisHome.navLinks[1].classList.remove(classNames.nav.active);
+      thisHome.navLinks[1].classList.add(classNames.nav.active);
     });
 
     thisHome.dom.bookButton.addEventListener('click', function(event){
       event.preventDefault();
       thisHome.pages[0].classList.remove(classNames.pages.active);
-      //thisHome.navLinks[0].classList.remove(classNames.nav.active);
+      thisHome.navLinks[0].classList.remove(classNames.nav.active);
       thisHome.pages[2].classList.add(classNames.pages.active);
-      //thisHome.navLinks[2].classList.add(classNames.nav.active);
+      thisHome.navLinks[2].classList.add(classNames.nav.active);
     });
 
   }

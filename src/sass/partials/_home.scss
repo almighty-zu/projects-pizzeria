@@ -132,3 +132,86 @@
     font-style: italic;
   }
 }
+
+.gallery {
+  margin-top: 100px;
+  margin-bottom: 18px;
+}
+
+.gallery-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.box {
+  height: 190px;
+  width: 190px;
+  border-radius: 2%;
+  position: relative;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  cursor: pointer;
+  border-radius: 5%;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+}
+
+.overlay i {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 80px 15px;
+}
+
+i:hover {
+  color: red;
+}
+
+.box:hover > .overlay {
+  display: block;
+}
+
+.overlay:hover i{
+  display: inline-block;
+}
+
+.g1 {
+  background-image: url(../../images/pizza-4.jpg);
+  background-size: cover;
+}
+
+.g2 {
+  background-image: url(../../images/pizza-5.jpg);
+  background-size: cover;
+}
+
+.g3 {
+  background-image: url(../../images/pizza-6.jpg);
+  background-size: cover;
+}
+
+.g4 {
+  background-image: url(../../images/pizza-7.jpg);
+  background-size: cover;
+}
+
+.g5 {
+  background-image: url(../../images/pizza-8.jpg);
+  background-size: cover;
+}
+
+.g6 {
+  background-image: url(../../images/pizza-9.jpg);
+  background-size: cover;
+}
+
